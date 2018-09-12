@@ -1,0 +1,75 @@
+{% extends "auth/signup-block.html" %}
+{% load staticfiles %}
+
+{% block signup_content %}
+
+
+
+
+			<div id="pricing-plans-background-image">
+				<div class="container">
+						<div class="pricing-plans-page-container">
+
+							<div class="row">
+                            {% for plan in plans %}
+								<div class="col-sm">
+									<div class="pricing-table-col">
+										<h6>{{ plan.name | upper }}</h6>
+                                        {% if plan.duration_price == 0 %}
+                                            <h2>FREE</h2>
+                                        {% else %}
+										<h2><sup>TSH</sup>{{ plan.duration_price }}<span> / {{ plan.duration_unit | upper }}</span></h2>
+                                        {% endif %}
+										<ul>
+											<li>{{ plan.quality }} Available</li>
+											<li>{{ plan.devices }}</li>
+											<li>{{ plan.movie_limit }} Movies and {{ plan.show_limit }} Shows</li>
+											<li>Download Available</li>
+										</ul>
+										<p><a class="btn" href="{% url 'signup' 2 plan.id%}" role="button">Choose Plan</a></p>
+									</div><!-- close .pricing-table-col -->
+								</div>
+                                {% endfor %}
+                                <!-- close .col-md-12 -->
+                                
+								<!--<div class="col-sm">
+									<div class="pricing-table-col">
+										<h6>STARTER</h6>
+										<h2><sup>$</sup>10<span> / month</span></h2>
+										<ul>
+											<li>HD Available</li>
+											<li>Watch on any Device</li>
+											<li>70 Movies and Shows</li>
+											<li>Download Available</li>
+										</ul>
+										<p><a class="btn btn-green-pro" href="signup-step2.html" role="button">Choose Plan</a></p>
+									</div><!-- close .pricing-table-col --
+								</div><!-- close .col-md-12 --
+								<div class="col-sm active">
+									<div class="pricing-table-col">
+										<h6>PREMIUM</h6>
+										<h2><sup>$</sup>14<span> / month</span></h2>
+										<ul>
+											<li>Ultra HD Available</li>
+											<li>Watch on any Device</li>
+											<li>Unlimited Movies and Shows</li>
+											<li>Download Available</li>
+										</ul>
+										<p><a class="btn" href="signup-step2.html" role="button">Choose Plan</a></p>
+									</div><!-- close .pricing-table-col -->
+								</div><!-- close .col-md-12 -->
+							</div><!-- close .row -->
+
+						</div><!-- close .pricing-plans-page-container -->
+
+				</div><!-- close .container -->
+			</div><!-- close #pricing-plans-background-image -->
+
+
+
+
+
+
+
+
+{% endblock %}

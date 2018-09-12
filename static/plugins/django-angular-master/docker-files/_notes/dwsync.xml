@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="redis.conf" server="167.99.77.154//var/www/html/cloudsplus/" local="131642720740000000" remote="131717566420000000" Dst="0" />
+<file name="redis.ini" server="167.99.77.154//var/www/html/cloudsplus/" local="131642720740000000" remote="131717566440000000" Dst="0" />
+<file name="uwsgi-emperor.ini" server="167.99.77.154//var/www/html/cloudsplus/" local="131642720740000000" remote="131717566460000000" Dst="0" />
+<file name="uwsgi-runserver.ini" server="167.99.77.154//var/www/html/cloudsplus/" local="131642720740000000" remote="131717566480000000" Dst="0" />
+<file name="uwsgi-websocket.ini" server="167.99.77.154//var/www/html/cloudsplus/" local="131642720740000000" remote="131717566510000000" Dst="0" />
+<file name="wsgi_runserver.py" server="167.99.77.154//var/www/html/cloudsplus/" local="131642720740000000" remote="131717566530000000" Dst="0" />
+<file name="wsgi_websocket.py" server="167.99.77.154//var/www/html/cloudsplus/" local="131642720740000000" remote="131717566560000000" Dst="0" />
+<file name="redis.conf" server="159.203.113.29//home/cloudsplus/" local="131642720740000000" remote="131725572170000000" Dst="0" />
+<file name="redis.ini" server="159.203.113.29//home/cloudsplus/" local="131642720740000000" remote="131725572180000000" Dst="0" />
+<file name="uwsgi-emperor.ini" server="159.203.113.29//home/cloudsplus/" local="131642720740000000" remote="131725572190000000" Dst="0" />
+<file name="uwsgi-runserver.ini" server="159.203.113.29//home/cloudsplus/" local="131642720740000000" remote="131725572200000000" Dst="0" />
+<file name="uwsgi-websocket.ini" server="159.203.113.29//home/cloudsplus/" local="131642720740000000" remote="131725572210000000" Dst="0" />
+<file name="wsgi_runserver.py" server="159.203.113.29//home/cloudsplus/" local="131642720740000000" remote="131725572220000000" Dst="0" />
+<file name="wsgi_websocket.py" server="159.203.113.29//home/cloudsplus/" local="131642720740000000" remote="131725572230000000" Dst="0" />
+</dwsync>

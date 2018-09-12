@@ -1,0 +1,140 @@
+{% extends "headers_footers/login_block.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <style>
+   body{
+        background: #f9f9f9;
+    }
+    .login-wrap{
+        width:700px;
+        margin:5% auto;
+        font-family: "Open Sans";
+    }
+    .login-wrap > .header-pro {
+        padding: 40px 30px 70px;
+        text-align: center
+    }
+    .login-wrap > .header-pro > .logo{
+        height: 100px;
+    }
+
+    .login-wrap > .header-pro h2 {
+        font-size: 26px;
+        margin-bottom: 12px
+    }
+
+    .login-wrap > .header-pro h6 {
+        font-size: 16px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, .5);
+        margin-bottom: 15px
+    }
+    .login-wrap > .body-pro.social-login-modal-body-pro {
+        padding: 20px;
+
+        background: #fff;
+            border: 1px solid #cccccc;
+            border-radius: 6px ;
+    }
+
+    .login-wrap > .body-pro .registration-social-login-container {
+        width: calc(100% - 240px);
+        padding-right: 20px
+    }
+
+    .login-wrap > .body-pro .registration-social-login-or {
+        padding: 9px 0 12px;
+        font-size: 14px;
+        top: 40%;
+    }
+
+    .login-wrap > .body-pro .registration-social-login-options {
+        padding: 15px 20px 20px 40px;
+        width: 240px;
+        float: right
+    }
+
+    .login-wrap > .body-pro .registration-social-login-options h6 {
+        margin: 0 0 18px;
+        font-size: 14px
+    }
+
+    .login-wrap > .body-pro .social-icon-login {
+        padding: 10px 15px;
+        font-size: 12px;
+        margin-bottom: 8px
+    }
+
+    .login-wrap > .body-pro .social-icon-login i {
+        left: 15px;
+        top: 14px
+    }
+
+    a.not-a-member-pro {
+        display: block;
+        margin-top: 20px;
+        border: 1px solid #cccccc;
+        border-radius: 6px;
+        padding: 12px 20px;
+        background: transparent;
+        text-align: center;
+        color: #777;
+        letter-spacing: .02em;
+    }
+    </style>
+<div class="login-wrap">
+
+				 <div class="header-pro">
+					 <!--<h2>Welcome Back</h2>
+					 <h6>Sign in to your account to continue using SKRN</h6>-->
+                     <img class="logo" src="{% static 'images/logo_small_2.png' %}" alt="Logo">
+				 </div>
+
+				 <div class="body-pro social-login-modal-body-pro">
+
+					 <div class="registration-social-login-container">
+						 <form action="" method="post">
+                             {% csrf_token %}
+							 <div class="form-group">
+								 <input type="text" class="form-control" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}" placeholder="Username">
+                                 {{ form.username.errors }}
+							 </div>
+							 <div class="form-group">
+                                 <input type="password" class="form-control" id="{{ form.password.id_for_label }}" name="{{ form.password.html_name }}" placeholder="Password">
+							    {{ form.password.errors }}
+                             </div>
+
+							 <div class="form-group">
+								 <button type="submit" class="btn btn-green-pro btn-display-block">Sign In</button>
+							 </div>
+
+							 <div class="container-fluid">
+								 <div class="row no-gutters">
+							 		<div class="col checkbox-remember-pro"><input type="checkbox" id="checkbox-remember"><label for="checkbox-remember" class="col-form-label">Remember me</label></div>
+									<div class="col forgot-your-password"><a href="index.html#!">Forgot your password?</a></div>
+								</div>
+							</div><!-- close .container-fluid -->
+
+						 </form>
+
+
+						 <div class="registration-social-login-or">or</div>
+
+					 </div><!-- close .registration-social-login-container -->
+
+					 <div class="registration-social-login-options">
+					 	<h6>Sign in with your social account</h6>
+						<div class="social-icon-login facebook-color"><i class="fab fa-facebook-f"></i> Facebook</div>
+						<div class="social-icon-login twitter-color"><i class="fab fa-twitter"></i> Twitter</div>
+						<div class="social-icon-login google-color"><i class="fab fa-google-plus-g"></i> Google</div>
+					 </div><!-- close .registration-social-login-options -->
+
+					 <div class="clearfix"></div>
+
+
+ 		      </div><!-- close .modal-body -->
+
+			 <a class="not-a-member-pro" href="{% url "signup" section=1 %}">Not a member? <span>Join Today!</span></a>
+		    </div>
+{% endblock %}

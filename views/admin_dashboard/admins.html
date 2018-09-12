@@ -1,0 +1,381 @@
+{% verbatim mainblock %}
+
+<div class="left-col col-md-3" ng-hide="new_admin_view">
+    <div class="header"><button class="btn" ng-click="new_admin(false)"><span class="icon-plus3 mr10"></span>NEW ADMIN</button></div>
+    <div class="body">
+        <div class="search"><input type="text" class="form-control" placeholder="search movies"><span class=" icon-search2"></span></div>
+        <ul class="user-list">
+            <li ng-repeat="admin in admins" ng-click="selectAdmin(admin)" class="{{selectedAdmin.username == admin.username ? 'active' : '' }}">
+                <div class="thumbnail img-div"><img src="{{base_url+admin.profile.image.file}}" alt=""></div>
+                <h6 class="name">{{admin.full_name}}</h6>
+                <span class="views">{{admin.email}}</span>
+                <span class="air-time"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="main-col col-md-9"  ng-hide="new_admin_view">
+    <div class="header">
+        <ul class="subheader-menu">
+            <li class="{{ page == 'info' ? 'active' : ''}}"><a ng-click="changePage('info')">INFO</a></li>
+            <li class="{{ page == 'permissions' ? 'active' : ''}}"><a ng-click="changePage('permissions')">PERMISSIONS</a></li>
+        </ul>
+    </div>
+    <div class="body" ng-show="page == 'info'">
+    <div class="container-fluid">
+					<div class="row">
+						<div class="col-12  col-lg-3">
+							<div id="account-edit-photo">
+                            
+								<div class="img-200 img-div rc6 mt20"><img src="{{base_url+selectedAdmin.profile.image.file}}" ></div>
+                                
+                                <div class="btn-group d-flex mc" role="group">
+   <a href="" class="btn btn-primary w-100"  ng-click="change_image_modal()" >Change Picture</a>
+   <a href="" class="btn btn-danger w-100"><span class="icon-cross"></span></a>
+</div>
+                                
+                                  <!-- FORM TO UPLOAD THE IMAGES -->
+  <form method="post" enctype="multipart/form-data" id="formUpload">
+  	<input type="file" id="id_file" class="" name="file" style="display:none" accept="image">
+    <input type="hidden" id="id_x" name="x">
+	<input type="hidden" id="id_y" name="y">
+	<input type="hidden" id="id_height" name="height">
+	<input type="hidden" id="id_width" name="width">
+	<input type="hidden" id="id_user" name="username" value="{{selectedAdmin.username}}">
+  </form>
+
+
+
+
+
+                                
+							</div>
+						</div><!-- close .col -->
+						<div class="col pt30 pb30"  ng-show="page == 'edit'">
+						
+							<form class="account-settings-form">
+						
+							<h5>General Information</h5>
+							<p class="small-paragraph-spacing">By letting us know your name, we can make our support experience much more personal.</p>
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="first-name" class="col-form-label">First Name:</label>
+	   	  							 <input type="text" class="form-control" id="first-name" ng-model="editAdmin.first_name">
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+    	  								 <label for="last-name" class="col-form-label">Last Name:</label>
+    	  	  							 <input type="text" class="form-control" ng-model="editAdmin.last_name">
+    	  	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+    	  								 <label for="last-name">Country:</label>
+		 								<select class="custom-select"  ng-model="editAdmin.profile.country">
+		 								  <option ng-repeat="country in countries" value="{{country[0]}}">{{country[1]}}</option>
+		 								</select>
+    	  	  						 </div>
+								</div><!-- close .col -->
+							</div><!-- close .row -->
+							<hr>
+						
+							<h5>Account Information</h5>
+							<p class="small-paragraph-spacing">You can change the email address you use here.</p>
+							
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="e-mail" class="col-form-label">E-mail</label>
+	   	  							 <input type="text" class="form-control" id="e-mail" ng-model="editAdmin.email">
+	   	  						 </div>
+								</div><!-- close .col -->
+	
+								
+							</div><!-- close .row -->
+							
+							<hr>
+							
+							<p><a href="dashboard-account.html" class="btn btn-primary fl ">Save Changes</a><a ng-click="page = 'info'" class="btn btn-danger fl ml10">Cancel</a></p>
+							<br>
+							</form>
+						
+						</div><!-- close .col -->
+                        <div class="col pt30 pb30"  ng-show="page == 'password'">
+						
+							<form class="account-settings-form">
+				
+							<h5>Change Password</h5>
+							<p class="small-paragraph-spacing">You can change the password you use for your account here.</p>
+							<div class="row">
+			
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="new-password" class="col-form-label">New Password:</label>
+	   	  							 <input type="text" class="form-control" id="new-password" placeholder="Minimum of 6 characters">
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <div><label for="confirm-password" class="col-form-label">&nbsp; &nbsp;</label></div>
+	   	  							 <input type="text" class="form-control" id="confirm-password" placeholder="Confirm New Password">
+	   	  						 </div>
+								</div><!-- close .col -->
+							</div><!-- close .row -->
+							<hr>
+							<p><a href="dashboard-account.html" class="btn btn-primary fl ">Save Changes</a><a ng-click="page = 'info'" class="btn btn-danger fl ml10">Cancel</a></p>
+							<br>
+							</form>
+						
+						</div>
+                        <div class="col pt30"  ng-show="page == 'info'">
+						
+							<form class="account-settings-form">
+						
+							<h5>General Information</h5>
+							<p class="small-paragraph-spacing"></p>
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="first-name" class="col-form-label">First Name:</label>
+	   	  							 <p class="f12">{{selectedAdmin.first_name}}</p>
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+    	  								 <label for="last-name" class="col-form-label">Last Name:</label>
+    	  	  							 <p class="f12">{{selectedAdmin.last_name}}</p>
+    	  	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+    	  								 <label for="last-name" class="col-form-label">Country:</label>
+		 								<p class="f12">{{selectedAdmin.profile.country}}</p>
+    	  	  						 </div>
+								</div><!-- close .col -->
+							</div><!-- close .row -->
+							<hr>
+						
+							<h5>Account Information</h5>
+							<p class="small-paragraph-spacing"></p>
+							
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="e-mail" class="col-form-label">E-mail</label>
+	   	  							 <p class="f12">{{selectedAdmin.email}}</p>
+	   	  						 </div>
+								</div><!-- close .col -->
+								
+							</div><!-- close .row -->
+							
+							<hr>
+							
+							<p><a ng-click="page = 'edit'" class="btn btn-primary">Edit user</a>
+                            </p>
+							<br>
+							</form>
+						
+						</div><!-- close .col -->
+					</div><!-- close .row -->
+				</div>
+    </div>
+    <div class="body" ng-show="page == 'permissions'">
+    <div class="container-fluid">
+					<div class="row">
+						<div class="col-12  col-lg-3">
+							<div id="account-edit-photo">
+                            
+								<div class="img-200 img-div rc6 mt20"><img src="{{base_url+selectedAdmin.profile.image.file}}" ></div>
+                                <p class="small-paragraph-spacing">{{selectedAdmin.full_name}}</p>
+                                
+ 
+                                
+							</div>
+						</div><!-- close .col -->
+						<div class="col pt30 pb30" >
+						
+							<form class="account-settings-form">
+						
+							<h5>User Permissions</h5>
+							<p class="small-paragraph-spacing">The following are the permissions assigned to the selected user.</p>
+					
+							<hr>
+
+							<br>
+							</form>
+						
+						</div><!-- close .col -->
+            
+					</div><!-- close .row -->
+				</div>
+    </div>
+</div>
+
+
+<div class="main-col col-md-12" ng-show="new_admin_view">
+    <div class="header">
+        <ul class="subheader-menu">
+        
+        	<li class="mr20"><a ng-click="edit_movie_view(false)"><span class="icon-cross"></span></a></li>
+            
+            
+            <li class="{{ step == '1' ? 'active' : ''}}"><a >1. Info</a></li>
+            <li class="{{ step == '2' ? 'active' : ''}}"><a >2. Image</a></li>
+            <li class="{{ step == '3' ? 'active' : ''}}"><a >3. Permission</a></li>
+
+
+            
+        </ul>
+    </div>
+
+	<div class="step" ng-show="step == 1">
+    <div class="body" >
+    <div class="center-col col-md-9">	
+						
+							<form class="account-settings-form">
+						
+							<h5>General Information</h5>
+							<p class="small-paragraph-spacing">By letting us know your name, we can make our support experience much more personal.</p>
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="first-name" class="col-form-label">First Name:</label>
+	   	  							 <input type="text" class="form-control" ng-model="new_admin.first_name">
+                                     <span class="form-error">{{error.first_name}}</span>
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+    	  								 <label for="last-name" class="col-form-label">Last Name:</label>
+    	  	  							 <input type="text" class="form-control"  ng-model="new_admin.last_name">
+                                         <span class="form-error">{{error.last_name}}</span>
+    	  	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+    	  								 <label for="last-name" class="col-form-label">Country:</label>
+		 								<select class="custom-select"  ng-model="new_admin.country">
+		 								  <option ng-repeat="country in countries" value="{{country[0]}}">{{country[1]}}</option>
+		 								</select>
+    	  	  						 </div>
+								</div><!-- close .col -->
+							</div><!-- close .row -->
+							<hr>
+						
+							<h5>Account Information</h5>
+							<p class="small-paragraph-spacing">Please use a unique email.</p>
+							
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="e-mail" class="col-form-label">E-mail</label>
+	   	  							 <input type="text" class="form-control" ng-model="new_admin.email">
+                                     <span class="form-error">{{error.email}}</span>
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+    	  	  						 <div class="form-group">
+    	  								 <div><label for="button-change" class="col-form-label">&nbsp; &nbsp;</label></div>
+    	  	  							
+    	  	  						 </div>
+								</div><!-- close .col -->
+								
+							</div><!-- close .row -->
+							
+							<hr>
+							<h5>Change Password</h5>
+							<p class="small-paragraph-spacing">The admin will be able to change his own password. the default password is 12345</p>
+							<div class="row">
+								
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="new-password" class="col-form-label">New Password:</label>
+	   	  							 <input type="password" class="form-control" id="new-password" placeholder="Minimum of 6 characters" ng-model="new_admin.password" value="12345">
+                                     <span class="form-error">{{error.password}}</span>
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <div><label for="confirm-password" class="col-form-label">Confirm New Password</label></div>
+	   	  							 <input type="password" class="form-control" id="confirm-password" placeholder="Confirm New Password" ng-model="new_admin.confirm_password" value="12345">
+	   	  						 </div>
+								</div><!-- close .col -->
+							</div><!-- close .row -->
+							
+							</form>
+						
+					
+    
+    </div>
+    </div>
+    
+    <div class="footer pa20 bt">
+        <button class="btn btn-danger" ng-click="cancel_step()" ng-show="step == '1'">CANCEL</button>
+        
+        <button class="btn btn-danger" ng-click="prev_step()" ng-show="step > 1">PREV</button>
+        <button class="btn btn-primary fr" ng-click="next_step()">NEXT</button>
+    </div>
+    </div>
+    
+    <div class="step" ng-show="step == 2">
+    <div class="body" >
+    <div class="center-col col-md-9">
+    
+                        </div>
+    </div>
+    <div class="footer pa20 bt">
+        <button class="btn btn-primary" ng-click="prev_step()">BACK</button>
+        <button class="btn btn-primary fr" ng-click="next_step()">NEXT</button>
+    </div>
+    </div>
+    
+    <div class="step" ng-show="step == 3">
+    <div class="body" >
+    </div>
+    <div class="footer pa20 bt">
+        <button class="btn btn-primary" ng-click="prev_step()">BACK</button>
+        <button class="btn btn-primary fr" ng-click="next_step()">FINISH</button>
+    </div>
+    </div>
+    
+    
+    
+    
+
+</div>
+
+  <!-- MODAL TO CROP THE IMAGE -->
+<div class="modal fade" id="modalCrop"  >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Crop the photo</h4>
+      </div>
+      <div class="modal-body pa0">
+        <img src="" id="image" style="max-width: 100%;">
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group pull-left" role="group">
+          <button type="button" class="btn btn-default js-zoom-in">
+            <span class="icon-zoom-in"></span>
+          </button>
+          <button type="button" class="btn btn-default js-zoom-out">
+            <span class="icon-zoom-out"></span>
+          </button>
+        </div>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>
+        <button type="button" class="btn btn-primary js-crop-and-upload">Crop and upload</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endverbatim mainblock %}
+			
+

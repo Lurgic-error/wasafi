@@ -1,0 +1,53 @@
+{% extends "headers_footers/block.html" %}
+{% load staticfiles %}
+
+{% block content %}
+        <div id="content-pro" ng-controller="login">
+			
+  	 		<div class="container">
+					<div class="centered-headings-pro pricing-plans-headings">
+						<h6>For one low monthly price</h6>
+						<h1>Instantly watch TV shows &amp; Movies</h1>
+					</div>
+			</div><!-- close .container -->
+			
+			<div class="container">
+				<ul id="registration-steps-pro">
+					<li class=" {% if  section == 1 %} current-menu-item{% else %} {{ section }} {% endif %}">
+						<a href="#">
+							<div class="registration-step-circle-icon">01</div>
+							<div class="registration-step-number">Step 1</div>
+							<h5 class="registration-step-title">Choose your plan</h5>
+						</a>
+					</li>
+					<li class="{% if  section == 2 %} current-menu-item {% endif %}">
+						<a href="">
+							<div class="registration-step-circle-icon">02</div>
+							<div class="registration-step-number">Step 2</div>
+							<h5 class="registration-step-title">Create your account</h5>
+						</a>
+					</li>
+					<li class="{% if  section == 3 %} current-menu-item {% endif %}">
+						<a href="">
+							<div class="registration-step-circle-icon">03</div>
+							<div class="registration-step-number">Step 3</div>
+							<h5 class="registration-step-title">Billing information</h5>
+						</a>
+					</li>
+					<li class="{% if  section == 4 %} current-menu-item {% endif %}">
+						<a href="">
+							<div class="registration-step-circle-icon">04</div>
+							<div class="registration-step-number">Step 4</div>
+							<h5 class="registration-step-title">Welcome to Cloudsplus!</h5>
+						</a>
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			
+			
+			{% block signup_content %}
+            {% endblock %}
+			
+		</div><!-- close #content-pro -->
+{% endblock %}

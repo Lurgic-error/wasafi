@@ -1,0 +1,296 @@
+{% load static %}
+{% verbatim mainblock  %}
+
+    <div class="dashboard-container-profile">
+<div id="content-sidebar-pro">
+			
+			<div id="content-sidebar-info">
+				<img src="{{ static_url+'images/demo/profile-image-sidebar.jpg' }}" alt="Suzie">
+				<div id="profile-sidebar-name">
+					<h5>Suzie Smith</h5>
+					<h6>Manila, Philippines</h6>
+				</div>
+				<div id="profile-sidebar-gradient"></div>
+				<a href="dashboard-account.html" class="edit-profile-sidebar"><i class="fas fa-pencil-alt"></i></a>
+			</div>
+			
+			<div class="content-sidebar-section">
+				<h3 class="content-sidebar-sub-header">Watched</h3>
+				<ul id="profile-watched-stats">
+					<li><span>43</span> Movies</li>
+					<li><span>28</span> Series</li>
+					<li><span>07</span> Docs</li>
+				</ul>
+			</div><!-- close .content-sidebar-section -->
+			
+			<div class="content-sidebar-section">
+				<h3 class="content-sidebar-sub-header">Favorite Genres</h3>
+				<ul id="profile-favorite-genres">
+					<li>
+						<img src="{{ static_url+'images/genres/comedy.png' }}" alt="Comedy">
+					</li>
+					<li>
+						<img src="{{ static_url+'images/genres/action.png' }}" alt="Action">
+					</li>
+					<li>
+						<img src="{{ static_url+'images/genres/romance.png' }}" alt="Romance">
+					</li>
+					<li>
+						<img src="{{ static_url+'images/genres/fantasy.png' }}" alt="Fantasy">
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+			</div><!-- close .content-sidebar-section -->
+			
+			<div class="content-sidebar-section">
+				<h3 class="content-sidebar-sub-header">Friends: 87</h3>
+				<ul id="friends-activity-profiles">
+					<li><a href="dashboard-profile.html#!"><img src="{{ static_url+'images/demo/user-8.jpg' }}" alt="Friend"></a></li>
+					<li><a href="dashboard-profile.html#!"><img src="{{ static_url+'images/demo/user-9.jpg' }}" alt="Friend"></a></li>
+					<li><a href="dashboard-profile.html#!"><img src="{{ static_url+'images/demo/user-10.jpg' }}" alt="Friend"></a></li>
+					<li><a href="dashboard-profile.html#!"><img src="{{ static_url+'images/demo/user-11.jpg' }}" alt="Friend"></a></li>
+					<li class="friends-activity-profiles-more"><a href="dashboard-profile.html#!">+83</a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div><!-- close .content-sidebar-section -->
+			
+			<div class="content-sidebar-section">
+				<h3 class="content-sidebar-sub-header">Friends Activity</h3>
+				<ul id="friends-activity-feed">
+					<li><img src="{{ static_url+'images/demo/user-15.jpg' }}" alt="Friend">Added <a href="dashboard-profile.html#!">Interstellar</a> to her Favorite Playlist</li>
+					<li><img src="{{ static_url+'images/demo/user-8.jpg' }}" alt="Friend">Wants to Watch <a href="dashboard-profile.html#!">The Imitation Game</a></li>
+					<li><img src="{{ static_url+'images/demo/user-9.jpg' }}" alt="Friend">Added <a href="dashboard-profile.html#!">Moonlight</a> to his <a href="dashboard-profile.html#!">Playlist Best Dramas</a></li>
+					<li><img src="{{ static_url+'images/demo/user-4.jpg' }}" alt="Friend">Watched <a href="dashboard-profile.html#!">Transformers: The Last Knight</a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div><!-- close .content-sidebar-section -->
+			
+			
+		</div><!-- close #content-sidebar-pro -->
+				<ul class="dashboard-sub-menu">
+					<li class="current"><a href="dashboard-profile.html">Recommended</a></li>
+					<li><a href="dashboard-favorites.html">Favorites</a></li>
+					<li><a href="dashboard-profile.html#!">Playlists</a></li>
+					<li><a href="dashboard-profile.html#!">Reviews</a></li>
+					<li><a href="dashboard-profile.html#!">Friends</a></li>
+				</ul><!-- close .dashboard-sub-menu -->
+				
+				
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-Cloudsplus">
+							<a href="dashboard-movie-profile.html"><img src="{{ static_url+'images/demo/listing-1.jpg' }}" alt="Listing"></a>
+							<div class="item-listing-text-Cloudsplus">
+								<div class="item-listing-text-Cloudsplus-vertical-align"><h6><a href="dashboard-movie-profile.html">The Wild Things Are</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close .item-listing-text-Cloudsplus-vertical-align -->
+							</div><!-- close .item-listing-text-Cloudsplus -->
+						</div><!-- close .item-listing-container-Cloudsplus -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-Cloudsplus">
+							<a href="dashboard-movie-profile.html"><img src="{{ static_url+'images/demo/listing-2.jpg' }}" alt="Listing"></a>
+							<div class="item-listing-text-Cloudsplus">
+								<div class="item-listing-text-Cloudsplus-vertical-align"><h6><a href="dashboard-movie-profile.html">Central Intelligence</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.6"
+							        data-animation-start-value="0.6"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#ff4141&quot;
+							        }"
+							        data-empty-fill="#ffe1e1"
+							        data-reverse="true"
+							      ><span style="color:#ff4141;">6.0</span></div>
+								</div><!-- close .item-listing-text-Cloudsplus-vertical-align -->
+							</div><!-- close .item-listing-text-Cloudsplus -->
+						</div><!-- close .item-listing-container-Cloudsplus -->
+					</div><!-- close .col -->
+					
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-Cloudsplus">
+							<a href="dashboard-movie-profile.html"><img src="{{ static_url+'images/demo/listing-3.jpg' }}" alt="Listing"></a>
+							<div class="item-listing-text-Cloudsplus">
+								<div class="item-listing-text-Cloudsplus-vertical-align"><h6><a href="dashboard-movie-profile.html">Zoolander No. 2</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close .item-listing-text-Cloudsplus-vertical-align -->
+							</div><!-- close .item-listing-text-Cloudsplus -->
+						</div><!-- close .item-listing-container-Cloudsplus -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-Cloudsplus">
+							<a href="dashboard-movie-profile.html"><img src="{{ static_url+'images/demo/listing-4.jpg' }}" alt="Listing"></a>
+							<div class="item-listing-text-Cloudsplus">
+								<div class="item-listing-text-Cloudsplus-vertical-align"><h6><a href="dashboard-movie-profile.html">Bad Neighbors 2</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.72"
+							        data-animation-start-value="0.72"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">7.2</span></div>
+								</div><!-- close .item-listing-text-Cloudsplus-vertical-align -->
+							</div><!-- close .item-listing-text-Cloudsplus -->
+						</div><!-- close .item-listing-container-Cloudsplus -->
+					</div><!-- close .col -->
+					
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-Cloudsplus">
+							<a href="dashboard-movie-profile.html"><img src="{{ static_url+'images/demo/listing-5.jpg' }}" alt="Listing"></a>
+							<div class="item-listing-text-Cloudsplus">
+								<div class="item-listing-text-Cloudsplus-vertical-align"><h6><a href="dashboard-movie-profile.html">Star Wars: Rogue One</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close .item-listing-text-Cloudsplus-vertical-align -->
+							</div><!-- close .item-listing-text-Cloudsplus -->
+						</div><!-- close .item-listing-container-Cloudsplus -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-Cloudsplus">
+							<a href="dashboard-movie-profile.html"><img src="{{ static_url+'images/demo/listing-6.jpg' }}" alt="Listing"></a>
+							<div class="item-listing-text-Cloudsplus">
+								<div class="item-listing-text-Cloudsplus-vertical-align"><h6><a href="dashboard-movie-profile.html">The Imitation Game</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.6"
+							        data-animation-start-value="0.6"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#ff4141&quot;
+							        }"
+							        data-empty-fill="#ffe1e1"
+							        data-reverse="true"
+							      ><span style="color:#ff4141;">6.0</span></div>
+								</div><!-- close .item-listing-text-Cloudsplus-vertical-align -->
+							</div><!-- close .item-listing-text-Cloudsplus -->
+						</div><!-- close .item-listing-container-Cloudsplus -->
+					</div><!-- close .col -->
+					
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-Cloudsplus">
+							<a href="dashboard-movie-profile.html"><img src="{{ static_url+'images/demo/listing-7.jpg' }}" alt="Listing"></a>
+							<div class="item-listing-text-Cloudsplus">
+								<div class="item-listing-text-Cloudsplus-vertical-align"><h6><a href="dashboard-movie-profile.html">Fantastic Beasts</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close .item-listing-text-Cloudsplus-vertical-align -->
+							</div><!-- close .item-listing-text-Cloudsplus -->
+						</div><!-- close .item-listing-container-Cloudsplus -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-Cloudsplus">
+							<a href="dashboard-movie-profile.html"><img src="{{ static_url+'images/demo/listing-8.jpg' }}" alt="Listing"></a>
+							<div class="item-listing-text-Cloudsplus">
+								<div class="item-listing-text-Cloudsplus-vertical-align"><h6><a href="dashboard-movie-profile.html">Edge of Tomorrow</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.72"
+							        data-animation-start-value="0.72"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">7.2</span></div>
+								</div><!-- close .item-listing-text-Cloudsplus-vertical-align -->
+							</div><!-- close .item-listing-text-Cloudsplus -->
+						</div><!-- close .item-listing-container-Cloudsplus -->
+					</div><!-- close .col -->
+					
+					<div class="col-12 col-md-6 col-lg-6 col-xl-4">
+						<div class="item-listing-container-Cloudsplus">
+							<a href="dashboard-movie-profile.html"><img src="{{ static_url+'images/demo/listing-9.jpg' }}" alt="Listing"></a>
+							<div class="item-listing-text-Cloudsplus">
+								<div class="item-listing-text-Cloudsplus-vertical-align"><h6><a href="dashboard-movie-profile.html">Allegiant</a></h6>
+							      <div
+							        class="circle-rating-pro"
+							        data-value="0.86"
+							        data-animation-start-value="0.86"
+							        data-size="32"
+							        data-thickness="3"
+							        data-fill="{
+							          &quot;color&quot;: &quot;#42b740&quot;
+							        }"
+							        data-empty-fill="#def6de"
+							        data-reverse="true"
+							      ><span style="color:#42b740;">8.6</span></div>
+								</div><!-- close .item-listing-text-Cloudsplus-vertical-align -->
+							</div><!-- close .item-listing-text-Cloudsplus -->
+						</div><!-- close .item-listing-container-Cloudsplus -->
+					</div><!-- close .col -->
+									
+				</div><!-- close .row -->
+				
+				
+				<ul class="page-numbers">
+					<li><a class="previous page-numbers" href="dashboard-profile.html#!"><i class="fas fa-chevron-left"></i></a></li>
+					<li><span class="page-numbers current">1</span></li>
+					<li><a class="page-numbers" href="dashboard-profile.html#!">2</a></li>
+					<li><a class="page-numbers" href="dashboard-profile.html#!">3</a></li>
+					<li><a class="page-numbers" href="dashboard-profile.html#!">4</a></li>
+					<li><a class="next page-numbers" href="dashboard-profile.html#!"><i class="fas fa-chevron-right"></i></a></li>
+				</ul>
+				
+				
+				
+			</div><!-- close .dashboard-container -->
+{% endverbatim mainblock  %}

@@ -1,0 +1,118 @@
+{% extends "auth/signup-block.html" %}
+{% load staticfiles %}
+
+{% block signup_content %}
+
+<div id="pricing-plans-background-image">
+  <div class="container">
+    <div class="registration-steps-page-container">
+      <form  method="POST"  class="registration-steps-form">{% csrf_token %}
+      
+     
+      
+        <div class="registration-social-login-container">
+          <div class="form-group">
+            <label for="full-name" class="col-form-label">Full Name</label>
+            <div class="row">
+            	<div class="col-md-6">
+                {{ form.first_name }}
+
+                <small class="form-text text-muted" style="color: red">
+                {% for error in form.first_name.errors %}
+                    {{ error }},
+                {% endfor %}
+                </small>
+
+                {% if form.first_name.help_text %}
+                    <small style="color: grey" class="form-text text-muted">{{ form.first_name.help_text }}</small>
+                {% endif %}
+                </div>
+            	<div class="col-md-6">
+                {{ form.last_name }}
+                <small class="form-text text-muted" style="color: red">
+                {% for error in form.last_name.errors %}
+                    {{ error }},
+                {% endfor %}
+                </small>
+                {% if form.last_name.help_text %}
+                    <small style="color: grey" class="form-text text-muted">{{ form.last_name.help_text }}</small>
+                {% endif %}
+                </div>
+            </div>
+            
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">Email</label>
+            {{ form.email }}
+            <small class="form-text text-muted" style="color: red">
+            {% for error in form.email.errors %}
+            	{{ error }},
+            {% endfor %}
+            {% for error in form.username.errors %}
+            	{{ error }},
+            {% endfor %}
+            </small>
+            {% if form.email.help_text %}
+             	<small style="color: grey" class="form-text text-muted">{{ form.email.help_text }}</small>
+            {% endif %}
+                
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <label for="password" class="col-form-label">Password</label>
+                {{ form.password1 }}
+                <small class="form-text text-muted" style="color: red">
+                {% for error in form.password1.errors %}
+                   {{ error }},
+                {% endfor %}
+                </small>
+                {% if form.password1.help_text %}
+                  <small style="color: grey" class="form-text text-muted">{{ form.password1.help_text }}</small>
+                {% endif %}
+                
+                
+              </div>
+              <div class="col">
+                <label for="confirm-password" class="col-form-label">&nbsp;</label>
+                {{ form.password2 }}
+                <small class="form-text text-muted" style="color: red">
+                {% for error in form.password2.errors %}
+                  {{ error }}
+                {% endfor %}
+                </small>
+                {% if form.password2.help_text %}
+                  <small style="color: grey" class="form-text text-muted">{{ form.password2.help_text }}</small>
+                {% endif %}
+                
+                
+              </div>
+            </div>
+          </div>
+            
+          <div class="registration-social-login-or">or</div>
+        </div>
+        <!-- close .registration-social-login-container -->
+        
+        <div class="registration-social-login-options">
+          <h6>Sign up with one of your social accounts</h6>
+          <a href="{% url "social:begin" "facebook" %}" class="social-icon-login facebook-color"><i class="fab fa-facebook-f"></i> Facebook</a> <a href="{% url "social:begin" "twitter" %}" class="social-icon-login twitter-color"><i class="fab fa-twitter"></i> Twitter</a> <a href="{% url "social:begin" "google-oauth2" %}" class="social-icon-login google-color"><i class="fab fa-google-plus-g"></i> Google</a> </div>
+        <!-- close .registration-social-login-options -->
+        
+        <div class="clearfix"></div>
+        <div class="form-group last-form-group-continue"> <button type="submit" class="btn btn-green-pro">Continue</button> <span class="checkbox-remember-pro">
+          <input type="checkbox" id="checkbox-terms">
+          <label for="checkbox-terms" class="col-form-label">By clicking "Continue", you agree to our <a href="signup-step2.html#!">Terms of Use</a> and <a href="signup-step2.html#!">Privacy Policy</a> including the use of cookies.</label>
+          </span>
+          <div class="clearfix"></div>
+        </div>
+      </form>
+    </div>
+    <!-- close .registration-steps-page-container --> 
+    
+  </div>
+  <!-- close .container --> 
+</div>
+<!-- close #pricing-plans-background-image --> 
+
+{% endblock %}

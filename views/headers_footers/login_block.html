@@ -1,0 +1,56 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en"  ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700%7CMontserrat:300,400,600,700">
+		
+		<link rel="stylesheet" href="{% static 'icons/fontawesome/css/fontawesome-all.min.css' %}"><!-- FontAwesome Icons -->
+		<link rel="stylesheet" href="{% static 'icons/Iconsmind__Ultimate_Pack/Line-20icons/styles.min.css' %}"><!-- iconsmind.com Icons -->
+        <link rel="stylesheet" href="{% static 'icons/icomoon/style.css' %}">
+
+        <script !src="">
+            static_url = '{% static '' %}'
+            base_url = '{% url 'home' %}'
+        </script>
+
+        <!-- angular -->
+        <script src="{% static 'js/angular/angular.min.js' %}"></script>
+        <script src="{% static 'js/angular/angular-route.min.js' %}"></script>
+        <script src="{% static 'js/angular/angular-resource.min.js' %}"></script>
+        <script src="{% static 'js/angular/angular-sanitize.min.js' %}"></script>
+        <script src="{% static 'js/angular/controllers.js' %}"></script>
+        <script src="{% static 'js/angular/app.js' %}"></script>
+
+        <!-- controllers -->
+        <script src="{% static 'js/controllers/login.js' %}"></script>
+		
+		<title>Cloudsplus - Media Streaming App</title>
+	</head>
+	<body style="background: #f9f9f9">
+		
+
+        
+        {% block content %}
+        {% endblock %}
+        
+
+
+<!-- Required Framework JavaScript --> 
+<script src="{% static 'js/libs/jquery-3.3.1.min.js' %}"></script><!-- jQuery --> 
+<script src="{% static 'js/libs/popper.min.js' %}" defer></script><!-- Bootstrap Popper/Extras JS --> 
+<script src="{% static 'js/libs/bootstrap.min.js' %}" defer></script><!-- Bootstrap Main JS --> 
+<!-- All JavaScript in Footer --> 
+
+<!-- Additional Plugins and JavaScript --> 
+<script src="{% static 'js/navigation.js' %}" defer></script><!-- Header Navigation JS --> 
+<script src="{% static 'js/jquery.flexslider-min.js' %}" defer></script><!-- Custom Document Ready JS --> 
+<script src="{% static 'js/script.js' %}" defer></script><!-- Custom Document Ready JS -->
+
+</body>
+</html>

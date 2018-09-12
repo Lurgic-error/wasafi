@@ -1,0 +1,197 @@
+{% verbatim mainblock %}
+    <div class="main-col col-md-12" >
+    <div class="header">
+        <ul class="subheader-menu">
+
+        	<li class="mr20"><a ng-click="edit_movie_view(false)"><span class="icon-cross"></span></a></li>
+
+
+            <li class="{{ page == 'plan' ? 'active' : ''}}"><a >PLANS</a></li>
+            <li class="{{ page == 'payment' ? 'active' : ''}}"><a >PAYMENTS</a></li>
+
+
+        </ul>
+    </div>
+
+
+    <div class="step" >
+    <div class="body" >
+    <div class="center-col col-md-9">
+    <form class="account-settings-form">
+
+							<h5>General Information</h5>
+							<p class="small-paragraph-spacing">By letting us know your name, we can make our support experience much more personal.</p>
+							<div class="row">
+								<div class="col-sm col-md-8">
+	   	  						 <div class="form-group">
+	   								 <label for="first-name" class="col-form-label">Movie Name:</label>
+	   	  							 <input type="text" class="form-control" id="first-name" value="Suzie">
+	   	  						 </div>
+								</div><!-- close .col -->
+
+                                <div class="col-sm col-md-4">
+    	  	  						 <div class="form-group">
+    	  								 <label for="last-name" class="col-form-label">Main genre:</label>
+		 								<select class="custom-select">
+		 								  <option value="0">All Countries</option>
+		 								  <option value="1">Argentina</option>
+		 								  <option value="2">Australia</option>
+		 								  <option value="3">Bahamas</option>
+		 								  <option value="4">Belgium</option>
+		 								  <option value="5">Brazil</option>
+		 								  <option value="6">Canada</option>
+		 								  <option value="7">Chile</option>
+		 								  <option value="8">China</option>
+		 								  <option value="9">Denmark</option>
+		 								  <option value="10">Ecuador</option>
+		 								  <option value="11">France</option>
+		 								  <option value="12">Germany</option>
+		 								  <option value="13">Greece</option>
+		 								  <option value="14">Guatemala</option>
+		 								  <option value="15">Italy</option>
+		 								  <option value="16">Japan</option>
+		 								  <option value="17">asdfasdf</option>
+		 								  <option value="18">Korea</option>
+		 								  <option value="19">Malaysia</option>
+		 								  <option value="20">Monaco</option>
+		 								  <option value="21">Morocco</option>
+		 								  <option value="22">New Zealand</option>
+		 								  <option value="23">Panama</option>
+		 								  <option value="24">Portugal</option>
+		 								  <option value="25">Russia</option>
+		 								  <option value="26">United Kingdom</option>
+		 								  <option selected="">United States</option>
+		 								</select>
+    	  	  						 </div>
+								</div><!-- close .col -->
+							</div><!-- close .row -->
+							<hr>
+
+							<h5>Movie Plot</h5>
+							<p class="small-paragraph-spacing">You can change the email address you use here.</p>
+
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="e-mail" class="col-form-label">Plot</label>
+                                     <textarea type="text" class="form-control" id="description" value="description"></textarea>
+	   	  						 </div>
+								</div><!-- close .col -->
+
+
+							</div><!-- close .row -->
+
+							<hr>
+							<h5>Other</h5>
+							<p class="small-paragraph-spacing">You can change the password you use for your account here.</p>
+							<div class="row">
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="password" class="col-form-label">Release Date:</label>
+	   	  							 <input type="text" class="form-control" id="password" value="············">
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="new-password" class="col-form-label">Duration:</label>
+	   	  							 <input type="text" class="form-control" id="new-password" placeholder="Minimum of 6 characters">
+	   	  						 </div>
+								</div><!-- close .col -->
+								<div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="new-password" class="col-form-label">Quality:</label>
+	   	  							 <input type="text" class="form-control" id="confirm-password" placeholder="Confirm New Password">
+	   	  						 </div>
+								</div><!-- close .col -->
+                                <div class="col-sm">
+	   	  						 <div class="form-group">
+	   								 <label for="new-password" class="col-form-label">Sensorship:</label>
+	   	  							 <input type="text" class="form-control" id="confirm-password" placeholder="Confirm New Password">
+	   	  						 </div>
+								</div><!-- close .col -->
+							</div><!-- close .row -->
+
+							<hr>
+							<h5>Other Genres</h5>
+							<p class="small-paragraph-spacing">Pick your favorite genres for content.</p>
+
+								<div class="registration-genres-step">
+									<ul class="registration-genres-choice">
+										<li class="active">
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url + 'images/genres/drama.png' }}" alt="Drama">
+											<h6>Drama</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url +'images/genres/comedy.png' }}" alt="Comedy">
+											<h6>Comedy</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url +'images/genres/action.png'}}" alt="Action">
+											<h6>Action</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url +'images/genres/romance.png' }}" alt="Romance">
+											<h6>Romance</h6>
+										</li>
+										<li class="active">
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url +'images/genres/horror.png' }}" alt="Horror">
+											<h6>Horror</h6>
+										</li>
+										<li class="active">
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url +'images/genres/fantasy.png' }}" alt="Fantasy">
+											<h6>Fantasy</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url + 'images/genres/sci-fi.png' }}" alt="Sci-Fi">
+											<h6>Sci-Fi</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url + 'images/genres/thriller.png' }}" alt="Thriller">
+											<h6>Thriller</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url + 'images/genres/western.png' }}" alt="Western">
+											<h6>Western</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url + 'images/genres/adventure.png' }}" alt="Adventure">
+											<h6>Adventure</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url +'images/genres/animation.png' }}" alt="Animation">
+											<h6>Animation</h6>
+										</li>
+										<li>
+											<i class="fas fa-check-circle"></i>
+											<img src="{{  static_url + 'images/genres/documentary.png' }}" alt="Documentary">
+											<h6>Documentary</h6>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div><!-- close .registration-genres-step -->
+								<div class="clearfix"></div>
+
+							</form>
+                            </div>
+    </div>
+    <div class="footer pa20 bt">
+        <button class="btn btn-primary" ng-click="prev_step()">BACK</button>
+        <button class="btn btn-primary fr" ng-click="next_step()">NEXT</button>
+    </div>
+    </div>
+
+</div>
+{% endverbatim mainblock %}
+			
+
